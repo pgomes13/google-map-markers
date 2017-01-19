@@ -1,0 +1,18 @@
+{
+  "name": "scooter-tutor",
+  "description": "The solution to the testing task by Scooter Tutor",
+  "main": "index.js",
+  "authors": [
+    "Pascoal Gomes"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/pgomes13/scooter-tutor",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

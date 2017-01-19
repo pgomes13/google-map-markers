@@ -1,0 +1,19 @@
+{
+  "name": "scooter-tutor",
+  "version": "1.0.0",
+  "description": "The solution to the testing task by Scooter Tutor",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgomes13/scooter-tutor.git"
+  },
+  "author": "Pascoal Gomes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pgomes13/scooter-tutor/issues"
+  },
+  "homepage": "https://github.com/pgomes13/scooter-tutor#readme"
+}
