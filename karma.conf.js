@@ -76,7 +76,7 @@ module.exports = function(config) {
       'karma-spec-reporter',
       'karma-babel-preprocessor'
     ],
-    
+
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
