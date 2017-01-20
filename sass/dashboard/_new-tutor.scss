@@ -1,21 +1,3 @@
-.form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto; }
-  .form-signin .form-signin-heading {
-    margin-bottom: 10px; }
-  .form-signin input[type="password"] {
-    margin-top: 10px;
-    margin-bottom: 15px; }
-  .form-signin .form-control {
-    position: relative;
-    height: auto;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    padding: 10px;
-    font-size: 16px; }
-
 .add-tutor {
   font-family: 'Open Sans Condensed', arial, sans;
   width: auto;
@@ -24,8 +6,9 @@
   margin: 50px auto;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
   -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-  -webkit-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22); }
-  .add-tutor h2 {
+  -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+  h2 {
     background: #4D4D4D;
     text-transform: uppercase;
     font-family: 'Open Sans Condensed', sans-serif;
@@ -33,8 +16,10 @@
     font-size: 18px;
     font-weight: 100;
     padding: 20px;
-    margin: -30px -30px 30px -30px; }
-  .add-tutor input[type="text"], .add-tutor textarea {
+    margin: -30px -30px 30px -30px;
+  }
+
+  input[type="text"], textarea {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -47,11 +32,15 @@
     background: transparent;
     margin-bottom: 10px;
     font: 16px Arial, Helvetica, sans-serif;
-    height: 45px; }
-  .add-tutor textarea {
-    resize: none;
-    overflow: hidden; }
-  .add-tutor input[type="button"], .add-tutor input[type="submit"] {
+    height: 45px;
+  }
+
+  textarea {
+    resize:none;
+    overflow: hidden;
+  }
+
+  input[type="button"], input[type="submit"] {
     -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
     box-shadow: inset 0px 1px 0px 0px #45D6D6;
@@ -64,7 +53,11 @@
     font-size: 14px;
     padding: 8px 18px;
     text-decoration: none;
-    text-transform: uppercase; }
-    .add-tutor input[type="button"]:hover, .add-tutor input[type="submit"]:hover {
-      background: linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-      background-color: #34CACA; }
+    text-transform: uppercase;
+
+    &:hover {
+      background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
+      background-color:#34CACA;
+    }
+  }
+}
