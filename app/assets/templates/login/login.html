@@ -2,9 +2,11 @@
   <form class="form-signin">
     <h2 class="form-signin-heading">Please log in</h2>
     <label for="inputEmail" class="sr-only">User name</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="User name" required="" autofocus="">
+    <input type="text" id="inputEmail" class="form-control" ng-model="login.username" placeholder="User name" required autofocus="">
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Log in</button>
+    <input type="password" id="inputPassword" class="form-control" ng-model="login.password" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click="login.authenticateUser()">Log in</button>
   </form>
+
+  <div uib-alert ng-show="login.showErrorMsg" class="alert-danger" close="login.closeAlert()"> The username or password you entered is wrong! Please try again.</div>
 </div>

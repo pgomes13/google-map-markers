@@ -4,6 +4,7 @@
   angular
     .module('scooter', [
       'ui.router',
-      'ui.bootstrap'
+      'ui.bootstrap',
+      'angular-storage'
     ]);
 })();

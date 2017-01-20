@@ -3,6 +3,8 @@
 
   angular
     .module('scooter')
-    .constant('username', 'scooterTutor')
-    .constant('password', 'rotoos');
+    .constant('$login', {
+      username: 'scooter',
+      password: 'tutor'
+    })
 })();
