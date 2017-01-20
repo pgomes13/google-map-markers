@@ -3,19 +3,33 @@
 (function () {
   'use strict';
 
-  angular.module('scooter', ['ui.router', 'ui.bootstrap', 'angular-storage']);
+  angular.module('scooter', ['ui.router', 'ui.bootstrap', 'angular-storage', 'ngSQLite']);
 })();
 'use strict';
 
 (function () {
   'use strict';
 
-  appReady.$inject = ['$state'];
+  appReady.$inject = ['$state', '$SQLite', 'DB_CONFIG'];
 
   angular.module('scooter').run(appReady);
 
-  function appReady($state) {
+  function appReady($state, $SQLite) {
     $state.go('app.login');
+
+    $SQLite.dbConfig({
+      name: 'scooter-tutor',
+      description: 'DB to store new tutors',
+      version: '1.0'
+    });
+
+    $SQLite.init(function (init) {
+      angular.forEach(DB_CONFIG, function (config, name) {
+        init.step();
+        $SQLite.createTable(name, config).then(init.done);
+      });
+      init.finish();
+    });
   }
 })();
 'use strict';
@@ -26,6 +40,27 @@
   angular.module('scooter').constant('$login', {
     username: 'scooter',
     password: 'tutor'
+  }).constant('DB_CONFIG', {
+    tutor: {
+      id: key,
+      name: {
+        type: 'text',
+        null: false
+      },
+      address: {
+        type: 'text',
+        null: false
+      },
+      latitude: {
+        type: 'real'
+      },
+      longitude: {
+        type: 'real'
+      },
+      subjects: {
+        type: 'blob'
+      }
+    }
   });
 })();
 'use strict';
@@ -54,18 +89,39 @@
 (function () {
   'use strict';
 
-  DashboardController.$inject = ['store', '$state'];
+  DashboardController.$inject = ['store', '$state', 'DbOpsFactory'];
   angular.module('scooter').controller('DashboardController', DashboardController);
 
-  function DashboardController(store, $state) {
+  function DashboardController(store, $state, DbOpsFactory) {
     var dash = this;
 
     // function declarations
     dash.logout = logout;
+    dash.createTutor = createTutor;
+
+    init();
+
+    function init() {
+      dash.form = {
+        name: '',
+        address: '',
+        subjects: ''
+      };
+    }
 
     function logout() {
       store.remove('isLoggedIn');
       $state.go('app.login');
+    }
+
+    function createTutor() {
+      var tutor = {
+        name: dash.form.name,
+        address: dash.form.address,
+        subjects: dash.form.subjects.split(',')
+      };
+
+      DbOpsFactory.addNewTutor(tutor);
     }
 
     return dash;
@@ -153,5 +209,29 @@
         }
       }]
     });
+  }
+})();
+'use strict';
+
+(function () {
+  'use strict';
+
+  DbOpsFactory.$inject = ['$SQLite'];
+
+  angular.module('scooter').factory('DbOpsFactory', DbOpsFactory);
+
+  function DbOpsFactory($SQLite) {
+
+    return {
+      addNewTutor: addNewTutor
+    };
+
+    function addNewTutor(tutor) {
+      $SQLite.ready(function () {
+        this.insert('tutor', tutor).then(onResult, onError, function (result) {
+          console.log(result);
+        });
+      });
+    }
   }
 })();
