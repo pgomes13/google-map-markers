@@ -4,8 +4,6 @@
   "description": "The solution to the testing task by Scooter Tutor",
   "main": "index.js",
   "scripts": {
-    "dev": "gulp run:dev",
-    "prod": "gulp run:prod",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

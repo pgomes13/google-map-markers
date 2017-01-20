@@ -1,12 +1,12 @@
 (function () {
   'use strict';
 
-  DashboardController.$inject = ['store', '$state', 'DbOpsFactory'];
+  DashboardController.$inject = ['store', '$state', 'StoreOpsFactory'];
   angular.module('scooter')
     .controller('DashboardController', DashboardController);
 
 
-  function DashboardController(store, $state, DbOpsFactory) {
+  function DashboardController(store, $state, StoreOpsFactory) {
     var dash = this;
 
     // function declarations
@@ -21,6 +21,8 @@
         address: '',
         subjects: ''
       };
+
+      StoreOpsFactory.getAllTutors();
     }
 
     function logout() {
@@ -35,7 +37,7 @@
         subjects: dash.form.subjects.split(',')
       };
 
-      DbOpsFactory.addNewTutor(tutor);
+      StoreOpsFactory.addNewTutor(tutor);
     }
 
     return dash;

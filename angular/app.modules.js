@@ -5,7 +5,6 @@
     .module('scooter', [
       'ui.router',
       'ui.bootstrap',
-      'angular-storage',
-      'ngSQLite'
+      'angular-storage'
     ]);
 })();
