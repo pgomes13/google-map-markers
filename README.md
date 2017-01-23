@@ -9,7 +9,7 @@ This is an AngularJS codebase that provides solution for the Scooter Tutor test 
 * [npm] - Installs, publishes and manages node programs
 * [Bower] - A package manager for the web
 * [Gulp] - The streaming build system
-* [Bootstrap] - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+* [Bootstrap] - Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web
 * [Angular UI Bootstrap] - Bootstrap components written in pure AngularJS by the AngularUI Team
 * [Sass] - Syntactically Awesome Style Sheets
 * [Babel] - The compiler for writing next generation JavaScript
@@ -63,7 +63,7 @@ MIT
 
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
-[Bootstrap] : <http://getbootstrap.com/>
+[Bootstrap]: <http://getbootstrap.com/>
 [Angular UI Bootstrap]: <https://angular-ui.github.io/bootstrap>
 [node.js]: <http://nodejs.org>
 [Bower]: https://bower.io/
