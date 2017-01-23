@@ -7,7 +7,7 @@
         <form>
           <input type="text" name="name" ng-model="dash.form.name" placeholder="Name" required/>
           <input type="text" name="address" ng-model="dash.form.address" placeholder="Address" required/>
-          <textarea ng-model="dash.form.subjects" placeholder="Subjects (each subject separated by a comma)" required></textarea>
+          <textarea ng-model="dash.form.subjects" placeholder="Subjects (each subject separated by a comma, no spaces)" required></textarea>
           <input ng-click="dash.createTutor()" type="button" value="Create"/>
         </form>
       </div>
@@ -25,19 +25,21 @@
           </tr>
         </thead>
         <tbody class="table-hover">
-          <tr ng-repeat="tutor in dash.tutors">
+          <tr ng-repeat="tutor in dash.tutors track by tutor.name">
             <td class="text-left">{{tutor.name}}</td>
-            <td class="text-left">{{tutor.subjects}}</td>
+            <td class="text-left">{{tutor.subjects | arr2string}}</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="col-sm-12 col-md-10 col-lg-6">&nbsp;</div>
+    <div class="col-sm-12 col-md-10 col-lg-6">
+      <div id="map"></div>
+    </div>
   </div>
 
   <div class="row">
     <div class="col-sm-4 col-md-5 col-lg-10">&nbsp;</div>
-    <div class="col-sm-4 col-md-2 col-lg-2">
+    <div class="col-sm-4 col-md-2 col-lg-2 btn-logout">
       <button ng-click="dash.logout()" type="button" class="btn btn-danger">Log out</button>
     </div>
     <div class="col-sm-4 col-md-5">&nbsp;</div>

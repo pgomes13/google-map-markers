@@ -16,6 +16,10 @@
       getAllTutors: getAllTutors
     }
 
+    /**
+     * Add the new tutor to local storage
+     * @param tutor
+     */
     function addNewTutor(tutor) {
       if (store.get('tutors')) {
         tutors = store.get('tutors');
