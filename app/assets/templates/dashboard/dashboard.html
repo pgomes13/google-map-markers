@@ -14,4 +14,32 @@
     </div>
     <div class="col-lg-3">&nbsp;</div>
   </div>
+
+  <div class="row" ng-show="dash.tutors.length">
+    <div class="col-sm-12 col-md-10 col-lg-6">
+      <table class="table-fill">
+        <thead>
+          <tr>
+            <th class="text-left">Tutor Name</th>
+            <th class="text-left">Subjects</th>
+          </tr>
+        </thead>
+        <tbody class="table-hover">
+          <tr ng-repeat="tutor in dash.tutors">
+            <td class="text-left">{{tutor.name}}</td>
+            <td class="text-left">{{tutor.subjects}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-12 col-md-10 col-lg-6">&nbsp;</div>
+  </div>
+
+  <div class="row">
+    <div class="col-sm-4 col-md-5 col-lg-10">&nbsp;</div>
+    <div class="col-sm-4 col-md-2 col-lg-2">
+      <button ng-click="dash.logout()" type="button" class="btn btn-danger">Log out</button>
+    </div>
+    <div class="col-sm-4 col-md-5">&nbsp;</div>
+  </div>
 </div>

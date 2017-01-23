@@ -12,6 +12,7 @@
     // function declarations
     dash.logout = logout;
     dash.createTutor = createTutor;
+    dash.logout = logout;
 
     init();
 
@@ -22,7 +23,7 @@
         subjects: ''
       };
 
-      StoreOpsFactory.getAllTutors();
+      dash.tutors = StoreOpsFactory.getAllTutors();
     }
 
     function logout() {
@@ -38,6 +39,7 @@
       };
 
       StoreOpsFactory.addNewTutor(tutor);
+      init();
     }
 
     return dash;
