@@ -1,6 +1,7 @@
 node_modules
-app/assets/components
-app/assets/css/app.css
-app/assets/js/app.js
+/app/assets/components
+/app/assets/css/app.css
+/app/assets/js/app.js
 .idea/*.*
 coverage
+.build/
