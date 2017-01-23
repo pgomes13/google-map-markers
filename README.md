@@ -1,4 +1,4 @@
-# genie-kiwiland
+# Scooter Tutor
 An AngularJS solution of the Scooter Tutor test.
 
 ## Synopsis
