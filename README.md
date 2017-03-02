@@ -47,12 +47,6 @@ All assets in the build folder have been minified & asset revisioned for product
 npm run build
 ```
 
-### Login
-Username: scooter
-
-Password: tutor
-
-
 ## Contributors
 [Pascoal Gomes](https://au.linkedin.com/in/pascoal-gomes-a4835954)
 
