@@ -1,8 +1,7 @@
-# Scooter Tutor
-An AngularJS solution of the Scooter Tutor test.
+# Google Map Markers
 
 ## Synopsis
-This is an AngularJS codebase that provides solution for the Scooter Tutor test in a GUI. It makes use of the following open source projects for boostrapping & running the application -
+This is an AngularJS codebase that displays Google Map Markers without using any Angular wrapper.
 
 * [AngularJS] - HTML enhanced for web apps!
 * [node.js] - Evented I/O for the backend
@@ -57,9 +56,6 @@ Password: tutor
 ## Contributors
 [Pascoal Gomes](https://au.linkedin.com/in/pascoal-gomes-a4835954)
 
-
-## Licence
-MIT
 
 [AngularJS]: <http://angularjs.org>
 [Gulp]: <http://gulpjs.com>
